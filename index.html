@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+  
+    <div class="contenedor">
+        <div class="calculadora">
+
+            <div class="input">
+
+                <input id="num1" type="number" placeholder="N°1">
+                <input id="num2" type="number" placeholder="N°2">
+
+            </div>
+
+            
+            <div class="operaciones">
+                <button onclick="sumar()" value="+" id="suma" class="btn-op">+</button>
+                <button onclick="restar()" value="-" id="resta" class="btn-op">-</button>
+                <button onclick="multiplicar()" value="*" id="multiplicacion" class="btn-op">*</button>
+                <button onclick="dividir()" value="/" id="division" class="btn-op">/</button>
+            </div>
+            
+            <button class="btn-grad" id="btn" onclick="sumar()">Enter</button>
+  
+       
+            <!-- <span id="resultado">EL RESULTADO ES:</span> -->
+        </div>
+    </div>
+
+</body>
+
+<!-- <script src="rickMorty.js"></script> -->
+<script src="ejem.js"></script>
+</html>
