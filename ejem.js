@@ -1,63 +1,44 @@
+// Capturamos el botón "Enter" por su ID
+let enter = document.getElementById('btn_calcular_op');
 
- let suma = document.getElementById('suma').value;
- let resta = document.getElementById('resta').value;
- let multiplicacion = document.getElementById('multiplicacion').value;
- let division = document.getElementById('division').value;
- let displey = document.getElementById('resultado');
-
- 
- 
- //  console.log(suma)
- //  console.log(resta)
- //  console.log(multiplicacion)
- //  console.log(division)
- 
- 
- function sumar(){
-   
-   let numero1 = parseInt(document.getElementById('num1').value);
-   let numero2 = parseInt(document.getElementById('num2').value);
+// Añadimos un evento de clic al botón "Enter"
+enter.addEventListener('click', () => {
+  // Capturamos los elementos input y botones de operación
+  let num1 = parseInt(document.getElementById('num1').value);
+  let num2 = parseInt(document.getElementById('num2').value);
+  let resultadoDisplay = document.getElementById('resultado');
   
+  // Capturamos el botón de operación seleccionado
+  let operacionSeleccionada = document.querySelector('.btn-op:checked');
 
-   let resul = numero1 + numero2;
-   console.log(resul); 
+  // Verificamos si se seleccionó una operación
+  if (operacionSeleccionada) {
+    // Obtenemos el valor del botón de operación seleccionado (es mejor usar .value)
+    let operador = operacionSeleccionada.value;
+    let resultado;
 
-   displey.innerText = "El resultado de la operacion es: " + resul;
-
-  
-}
-
-
- //comentarios sobre js
-function restar(){
-   
-  let numero1 = parseInt(document.getElementById('num1').value);
-  let numero2 = parseInt(document.getElementById('num2').value);
-
- let resul = numero1 - numero2;
- console.log(resul); 
-
-
-}
-
-function multiplicar(){
-   
-  let numero1 = parseInt(document.getElementById('num1').value);
-  let numero2 = parseInt(document.getElementById('num2').value);
-
- let resul = numero1 * numero2;
- console.log(resul); 
-
-
-}
-
-function dividir(){
-   
-  let numero1 = parseInt(document.getElementById('num1').value);
-  let numero2 = parseInt(document.getElementById('num2').value);
-
- let resul = numero1 / numero2;
- console.log(resul); 
-
-
-}
+    // Realizamos la operación correspondiente
+    switch (operador) {
+      case '+':
+        resultado = num1 + num2;
+        break;
+      case '-':
+        resultado = num1 - num2;
+        break;
+      case '*':
+        resultado = num1 * num2;
+        break;
+      case '/':
+        resultado = num1 / num2;
+        break;
+      default:
+        console.error('Operación no reconocida');
+        return; // Salimos de la función si la operación no es reconocida
+    }
+    
+    // Mostramos el resultado en el elemento span
+    resultadoDisplay.textContent = `EL RESULTADO ES: ${resultado}`;
+  } else {
+    console.error('Selecciona una operación');
+  }
+});

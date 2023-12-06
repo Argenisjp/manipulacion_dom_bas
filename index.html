@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+<!--     
     <div class="contenedor">
         <div class="calculadora">
             
@@ -16,24 +16,49 @@
             
             <div class="input">
 
-                <input id="num1" type="number" placeholder="N°1">
-                <input id="num2" type="number" placeholder="N°2">
+                <input  id="num1" type="number" placeholder="N°1">
+            
+                <input  id="num2" type="number" placeholder="N°2">
 
             </div>
 
-            
+
+
             <div class="operaciones">
-                <button onclick="sumar()" value="+" id="suma" class="btn-op">+</button>
-                <button onclick="restar()" value="-" id="resta" class="btn-op">-</button>
-                <button onclick="multiplicar()" value="*" id="multiplicacion" class="btn-op">*</button>
-                <button onclick="dividir()" value="/" id="division" class="btn-op">/</button>
+                <button type="button" name="+"  value="+" id="suma" class="btn-op">+</button>
+                <button type="button" name="-"  value="-" id="resta" class="btn-op">-</button>
+                <button type="button" name="*"  value="*" id="multiplicacion" class="btn-op">*</button>
+                <button type="button" name="/"  value="/" id="division" class="btn-op">/</button>
             </div>
             
-            <button class="btn-grad" id="btn" onclick="sumar()">Enter</button>
+            <button class="btn-grad" id="btn_calcular_op" >Enter</button>
   
        
         </div>
-    </div>
+    </div> -->
+
+
+
+    <div class="contenedor">
+        <div class="calculadora">
+          <span id="resultado">EL RESULTADO ES:</span><br>
+          
+          <div class="input">
+            <input id="num1" type="number" placeholder="N°1">
+            <input id="num2" type="number" placeholder="N°2">
+          </div>
+    
+          <div class="operaciones">
+            <!-- Cambié los botones de tipo "radio" a tipo "button" -->
+            <input type="radio" value="+" id="suma" class="btn-op">+</input>
+            <input type="radio" value="-" id="resta" class="btn-op">-</input>
+            <input type="radio" value="*" id="multiplicacion" class="btn-op">*</input>
+            <input type="radio" value="/" id="division" class="btn-op">/</input>
+          </div>
+          
+          <button class="btn-grad" id="btn_calcular_op">Enter</button>
+        </div>
+      </div>
 
 </body>
 
